@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<% include ./partials/_header %>
+  <title>TinyApp</title>
+</head>
+<body>
+    <!-- Add your EJS code here -->
+
+
+    <!-- ///A list or table of the URLs and their shortened forms. -->
+
+    <!-- urls.forEach(); -->
+
+    <ul>
+<% for(var i in urls) { %>
+   <li><%= urls[i] %> - <%= i %> </li>
+   <!-- <form method="POST" action="/urls/9sm5xK/delete"> <button type="submit">Delete</button>  /urls/:shortURL/delete -->
+
+
+<!--   <form method="POST"  id="" action="/urls/<%= i %>/change">
+    <label for="changeURL">Change URL:</label>
+    <input id="changeURL" type="text" name="changeURL" placeholder="http://" style="width: 300px">
+    <input type="submit" value="Change URL">
+  </form>
+ -->
+
+
+
+  <form method="POST" id="" action="/urls/<%= i %>/delete">
+
+    <input id="id" type="hidden" name="id" value="<%= i %>" style="width: 300px">
+    <button type="submit">Delete</button>
+   </form>
+
+
+
+<!--   <form method="GET" id="" action="/urls/<%= i %>">
+
+
+    <button type="submit">Edit</button>
+   </form>
+ -->
+
+
+
+
+<a style="width: 300px" href = "/urls/<%= i %>"> <button> Edit02 </button></a>
+
+
+
+<% }; %>
+</ul>
+
+
+
+
+
+
+
+
+
+    <!-- A link for shortening a new URL (this will be a dead link for now, that is it doesn't need to go anywhere since you'll be building its functionality later). -->
+</body>
+</html>
