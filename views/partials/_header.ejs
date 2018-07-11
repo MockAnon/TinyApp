@@ -1,2 +1,29 @@
 <header>
+
+
+<% if(!username){ %>
+
+  <form method="POST" id="" action="/login">
+
+  <input id="username" type="text" name="username" style="width: 200px">
+    <input type="submit" value="Login">
+    <p> <%= username %> </p>
+  </form>
+
+
+ <% } else{ %>
+
+
+
+
+<h1> <%= username %> </h1>
+ <a style="width: 300px" href = "/logout"> <button> LogOut </button></a>
+
+
+
+<% } %>
+
+
+
+
 </header>
