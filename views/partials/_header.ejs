@@ -1,27 +1,28 @@
 <header>
-
-
-<% if(!username){ %>
-
-  <form method="POST" id="" action="/login">
-
-  <input id="username" type="text" name="username" style="width: 200px">
-    <input type="submit" value="Login">
-    <p> <%= username %> </p>
-  </form>
-
-
- <% } else{ %>
+<h1> <%= userid%> </h1>
 
 
 
 
-<h1> <%= username %> </h1>
+<% if(userid){ %>
+
  <a style="width: 300px" href = "/logout"> <button> LogOut </button></a>
+ <a style="width: 300px" href = "/urls"> <button> List Links </button></a>
+ <a style="width: 300px" href = "/"> <button> Home</button></a>
 
+
+
+
+<% } else {%>
+
+<a style="width: 300px" href = "/login"> <button> LogIn </button></a>
+
+<a style="width: 300px" href = "/register"> <button> Register </button></a>
 
 
 <% } %>
+
+
 
 
 
