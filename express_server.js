@@ -68,16 +68,18 @@ app.post("/register", (req, res) => {
     res.status(400);
     res.send('Error 400: please enter both your e-mail and password');
   }
-for(user in users){
-  if(users[user].email === req.body.email){
-    res.status(400);
-    res.send('Email already taken, please choose another');
+  for(user in users){
+    if(users[user].email === req.body.email){
+      res.status(400);
+      res.send('Email already taken, please choose another');
+    }
+    if(req.body.email && req.body.password){
+      let userid = generateRandomString();
+      users[userid] = {id: userid, email: req.body.email, password: bcrypt.hashSync(req.body.password, 10)};
+      req.session.userid = userid;
+      res.redirect("/urls");
+    }
   }
-}
-  let userid = generateRandomString();
-  users[userid] = {id: userid, email: req.body.email, password: bcrypt.hashSync(req.body.password, 10)};
-  req.session.userid = userid;
-  res.redirect("/urls");
 });
 
 app.get("/register", (req, res) => {
@@ -156,6 +158,7 @@ app.post("/urls/:id/delete", (req, res) => {
     delete urlDatabase[req.session.userid][req.params.id];
   }
   res.redirect("/urls");
+  // location.href = "/urls"; // <---example
 });
 
 //__________________________________________________

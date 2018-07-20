@@ -1,10 +1,15 @@
 ----tiny app---
+##Set Up Steps
+01. Clone this repository.
+02. Install dependencies using the npm install command.
+03. Start the web server using the node express_server.js command in the terminal. The app will be served at http://localhost:8080/.
+04. Go to http://localhost:8080/ in your browser.
+
 ##start app
 01. register
 02. click home to start creating URL's
 03. create url starting with "http://" such as "http://www.youtube.com"
 04. clock submit
-
 
 ##using url shortcuts
 01. type http://localhost:8080/u/"insertShortCodeHere"
