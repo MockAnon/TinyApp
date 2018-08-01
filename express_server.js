@@ -64,6 +64,9 @@ const users = {   //adding in user database
 };
 
 app.post("/register", (req, res) => {
+
+
+
   if(!req.body.email || !req.body.password){
     res.status(400);
     res.send('Error 400: please enter both your e-mail and password');
@@ -73,13 +76,14 @@ app.post("/register", (req, res) => {
       res.status(400);
       res.send('Email already taken, please choose another');
     }
-    if(req.body.email && req.body.password){
-      let userid = generateRandomString();
-      users[userid] = {id: userid, email: req.body.email, password: bcrypt.hashSync(req.body.password, 10)};
-      req.session.userid = userid;
-      res.redirect("/urls");
-    }
   }
+  if(req.body.email && req.body.password){
+    let userid = generateRandomString();
+    users[userid] = {id: userid, email: req.body.email, password: bcrypt.hashSync(req.body.password, 10)};
+    req.session.userid = userid;
+    res.redirect("/urls");
+  }
+
 });
 
 app.get("/register", (req, res) => {
@@ -126,6 +130,9 @@ for(user in users){
     res.redirect("/");
     commit = true;
   }
+
+
+
 }
   if(commit === false){
       res.status(403);
