@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 <% include ./partials/_header %>
+
   <title>TinyApp</title>
 </head>
 
@@ -8,19 +9,25 @@
 
 
 <body>
-<p> LOG IN: </p>
+<p class="text-center"> LOG IN </p>
 
   <form method="POST" id="" action="/login">
 
 
-
+    <div class="w-100 text-center">
     <label for="email">Enter e-mail:</label>
-    <input type="email" name="email" placeholder="example@hotmail.com" style="width: 300px">
+    <input type="email" name="email" placeholder="example@hotmail.com" style="width: 335px">
+  </div>
 
+<div class="w-100 text-center">
     <label for="password">Enter password:</label>
-    <input type="password" name="password" placeholder="********" style="width: 300px">
+    <input type="password" name="password" placeholder="********" style="width: 290px">
+    </div>
 
+<div class="w-100 text-center">
     <button type="submit" name="submit">Submit</button>
+  </div>
+
 
 
 
