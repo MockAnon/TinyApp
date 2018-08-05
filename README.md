@@ -5,12 +5,16 @@
 03. Start the web server using the node express_server.js command in the terminal. The app will be served at http://localhost:8080/.
 04. Go to http://localhost:8080/ in your browser.
 
+!["Register"](https://github.com/MockAnon/TinyApp/blob/00e2c48c1969d7ff5c1777a8c699405bd6a82adf/docs/ScreenShot1.png)
+!["Creating URL"](https://github.com/MockAnon/TinyApp/blob/00e2c48c1969d7ff5c1777a8c699405bd6a82adf/docs/ScreenShot2.png)
+
 ##start app
 01. register
-02. click home to start creating URL's
+02. click New URL to start creating URL's
 03. create url starting with "http://" such as "http://www.youtube.com"
 04. clock submit
 
+!["View URLs"](https://github.com/MockAnon/TinyApp/blob/00e2c48c1969d7ff5c1777a8c699405bd6a82adf/docs/ScreenShot3.png)
 ##using url shortcuts
 01. type http://localhost:8080/u/"insertShortCodeHere"
 02. press enter and you will be redirected to the proper webpage.
@@ -32,3 +36,4 @@
 -bcrypt
 -body-parser
 -cookie-session
+-Bootstrap
